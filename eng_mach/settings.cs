@@ -57,7 +57,7 @@ namespace eng_mach
             this.Prev = prev;
         }
         int[] Convertion = new int[26];
-        string Pattern = "";
+        public string Pattern { get; private set; }
         Rotor Next = null;
         Rotor Prev = null;
         int Offset = 0;
@@ -90,8 +90,17 @@ namespace eng_mach
 
     public class Reflector
     {
+        Reflector(string pattern)
+        {
+            this.Pattern = pattern;
+            for (int i = 0; i < pattern.Length; i++)
+            {
+                this.Convertion[i] = settings.int_to_string.IndexOf(pattern[i]);
+            }
+        }
         int[] Convertion = new int[26];
-        string Pattern = "";
+
+        public string Pattern { get; private set; }
     }
 
     public class Plugboard
