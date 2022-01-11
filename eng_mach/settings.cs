@@ -78,11 +78,14 @@ namespace eng_mach
             }
             Offset++;
         }
-        void Send_to_Next_Rotor()
+        int Send_to_Next_Rotor(int pin)
         {
-
+            return Next.Convertion[pin]; 
         }
-        void
+        int Send_to_Prev_Rotor(int pin)
+        {
+            return Prev.Convertion[pin];
+        }
     }
 
     public class Reflector
