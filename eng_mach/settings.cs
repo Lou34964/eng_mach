@@ -10,7 +10,7 @@ namespace eng_mach
     {
         public static Rotor SelectedRotors = null;
         public static Reflector SelectedReflector = null;
-
+        public static Plugboard PlugBoard = new Plugboard();
 
         public static string int_to_string      = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         //                                        "01234567890123456789012345"
@@ -142,38 +142,17 @@ namespace eng_mach
 
     public class Plugboard
     {
-        string 
-            A="A",
-            B="B",
-            C="C",
-            D="D",
-            E="E",
-            F="F",
-            G="G",
-            H="H",
-            I="I",
-            J="J",
-            K="K",
-            L="L",
-            M="M",
-            N="N",
-            O="O",
-            P="P",
-            Q="Q",
-            R="R",
-            S="S",
-            T="T",
-            U="U",
-            V="V",
-            W="W",
-            X="X",
-            Y="Y",
-            Z="Z";
-    }
-
-    public class defs
-    {
-
+        int[] Default = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 };
+        int[] Plugs = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 };
+        void Reset()
+        {
+            Plugs = Default;
+        }
+        void SetPlug(int Plug1, int Plug2)
+        {
+            Plugs[Plug1] = Plug2;
+            Plugs[Plug2] = Plug1;
+        }
     }
 
     
