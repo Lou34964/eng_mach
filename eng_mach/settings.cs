@@ -153,9 +153,9 @@ namespace eng_mach
             Plugs[Plug1] = Plug2;
             Plugs[Plug2] = Plug1;
         }
-        void GetPlugConvertion(int plug)
+        int GetPlugConvertion(int plug)
         {
-            return Plugs[plug];
+            return this.Plugs[plug];
         }
     }
 

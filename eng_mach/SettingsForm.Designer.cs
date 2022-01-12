@@ -31,8 +31,8 @@ namespace eng_mach
         {
             this.LBRotorList = new System.Windows.Forms.ListBox();
             this.LBSelectedRotorList = new System.Windows.Forms.ListBox();
-            this.BtnMoveLeft = new System.Windows.Forms.Button();
             this.BtnMoveRight = new System.Windows.Forms.Button();
+            this.BtnMoveLeft = new System.Windows.Forms.Button();
             this.textBoxRotorPattern = new System.Windows.Forms.TextBox();
             this.lblRotorPattern = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -93,25 +93,27 @@ namespace eng_mach
             this.LBSelectedRotorList.Size = new System.Drawing.Size(120, 277);
             this.LBSelectedRotorList.TabIndex = 1;
             // 
-            // BtnMoveLeft
-            // 
-            this.BtnMoveLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMoveLeft.Location = new System.Drawing.Point(285, 94);
-            this.BtnMoveLeft.Name = "BtnMoveLeft";
-            this.BtnMoveLeft.Size = new System.Drawing.Size(41, 41);
-            this.BtnMoveLeft.TabIndex = 2;
-            this.BtnMoveLeft.Text = "►";
-            this.BtnMoveLeft.UseVisualStyleBackColor = true;
-            // 
             // BtnMoveRight
             // 
             this.BtnMoveRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMoveRight.Location = new System.Drawing.Point(285, 141);
+            this.BtnMoveRight.Location = new System.Drawing.Point(285, 94);
             this.BtnMoveRight.Name = "BtnMoveRight";
             this.BtnMoveRight.Size = new System.Drawing.Size(41, 41);
-            this.BtnMoveRight.TabIndex = 3;
-            this.BtnMoveRight.Text = "◄";
+            this.BtnMoveRight.TabIndex = 2;
+            this.BtnMoveRight.Text = "►";
             this.BtnMoveRight.UseVisualStyleBackColor = true;
+            this.BtnMoveRight.Click += new System.EventHandler(this.BtnMoveRight_Click);
+            // 
+            // BtnMoveLeft
+            // 
+            this.BtnMoveLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMoveLeft.Location = new System.Drawing.Point(285, 141);
+            this.BtnMoveLeft.Name = "BtnMoveLeft";
+            this.BtnMoveLeft.Size = new System.Drawing.Size(41, 41);
+            this.BtnMoveLeft.TabIndex = 3;
+            this.BtnMoveLeft.Text = "◄";
+            this.BtnMoveLeft.UseVisualStyleBackColor = true;
+            this.BtnMoveLeft.Click += new System.EventHandler(this.BtnMoveLeft_Click);
             // 
             // textBoxRotorPattern
             // 
@@ -523,8 +525,8 @@ namespace eng_mach
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lblRotorPattern);
             this.Controls.Add(this.textBoxRotorPattern);
-            this.Controls.Add(this.BtnMoveRight);
             this.Controls.Add(this.BtnMoveLeft);
+            this.Controls.Add(this.BtnMoveRight);
             this.Controls.Add(this.LBSelectedRotorList);
             this.Controls.Add(this.LBRotorList);
             this.Name = "SettingsForm";
@@ -538,8 +540,8 @@ namespace eng_mach
 
         private System.Windows.Forms.ListBox LBRotorList;
         private System.Windows.Forms.ListBox LBSelectedRotorList;
-        private System.Windows.Forms.Button BtnMoveLeft;
         private System.Windows.Forms.Button BtnMoveRight;
+        private System.Windows.Forms.Button BtnMoveLeft;
         private System.Windows.Forms.TextBox textBoxRotorPattern;
         private System.Windows.Forms.Label lblRotorPattern;
         private System.Windows.Forms.ComboBox comboBox1;

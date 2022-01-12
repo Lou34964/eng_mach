@@ -21,5 +21,11 @@ namespace eng_mach
         {
             
         }
+
+        private void BtnSettings_Click(object sender, EventArgs e)
+        {
+            SettingsForm sf = new SettingsForm();
+            sf.Show();
+        }
     }
 }

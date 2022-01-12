@@ -69,6 +69,7 @@ namespace eng_mach
             this.BtnSettings.TabIndex = 3;
             this.BtnSettings.Text = "Settings☼";
             this.BtnSettings.UseVisualStyleBackColor = true;
+            this.BtnSettings.Click += new System.EventHandler(this.BtnSettings_Click);
             // 
             // MainForm
             // 

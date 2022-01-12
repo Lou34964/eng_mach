@@ -16,5 +16,34 @@ namespace eng_mach
         {
             InitializeComponent();
         }
+
+        private void BtnMoveRight_Click(object sender, EventArgs e)
+        {
+            if(LBRotorList.SelectedIndex > -1)
+            {
+                if(LBSelectedRotorList.Items.Count < 3)
+                {
+                    LBSelectedRotorList.Items.Add(LBRotorList.SelectedItem);
+                    LBRotorList.Items.RemoveAt(LBRotorList.SelectedIndex);
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+
+            }
+        }
+
+        private void BtnMoveLeft_Click(object sender, EventArgs e)
+        {
+            if(LBSelectedRotorList.SelectedIndex > -1)
+            {
+                LBRotorList.Items.Add(LBSelectedRotorList.SelectedItem);
+                LBSelectedRotorList.Items.RemoveAt(LBSelectedRotorList.SelectedIndex);
+            }
+        }
     }
 }
