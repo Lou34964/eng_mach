@@ -153,6 +153,10 @@ namespace eng_mach
             Plugs[Plug1] = Plug2;
             Plugs[Plug2] = Plug1;
         }
+        void GetPlugConvertion(int plug)
+        {
+            return Plugs[plug];
+        }
     }
 
     
