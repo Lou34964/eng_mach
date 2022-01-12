@@ -94,5 +94,38 @@ namespace eng_mach
             }
         }
 
+        private void BtnUp_Click(object sender, EventArgs e)
+        {
+            int seli = LBSelectedRotorList.SelectedIndex;
+            if (seli > -1)
+            {
+                if(seli == 0)
+                {
+
+                }
+                else
+                {
+                    string temp = LBSelectedRotorList.Items[seli - 1].ToString();
+                    LBSelectedRotorList.Items[seli - 1] = LBSelectedRotorList.Items[seli];
+                    LBSelectedRotorList.Items[seli] = temp;
+                    LBSelectedRotorList.SelectedIndex -= 1;
+                }
+            }
+        }
+
+        private void BtnDown_Click(object sender, EventArgs e)
+        {
+            int seli = LBSelectedRotorList.SelectedIndex;
+            if(seli > -1)
+            {
+                if (seli < LBSelectedRotorList.Items.Count - 1)
+                {
+                    string temp = LBSelectedRotorList.Items[seli + 1].ToString();
+                    LBSelectedRotorList.Items[seli + 1] = LBSelectedRotorList.Items[seli];
+                    LBSelectedRotorList.Items[seli] = temp;
+                    LBSelectedRotorList.SelectedIndex ++;
+                }
+            }
+        }
     }
 }

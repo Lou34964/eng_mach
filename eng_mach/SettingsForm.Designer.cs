@@ -38,8 +38,8 @@ namespace eng_mach
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnUp = new System.Windows.Forms.Button();
+            this.BtnDown = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -173,25 +173,27 @@ namespace eng_mach
             this.label2.TabIndex = 8;
             this.label2.Text = "Selected Rotors";
             // 
-            // button1
+            // BtnUp
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(505, 113);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(41, 41);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "▲";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUp.Location = new System.Drawing.Point(505, 113);
+            this.BtnUp.Name = "BtnUp";
+            this.BtnUp.Size = new System.Drawing.Size(41, 41);
+            this.BtnUp.TabIndex = 9;
+            this.BtnUp.Text = "▲";
+            this.BtnUp.UseVisualStyleBackColor = true;
+            this.BtnUp.Click += new System.EventHandler(this.BtnUp_Click);
             // 
-            // button2
+            // BtnDown
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(505, 160);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(41, 41);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "▼";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDown.Location = new System.Drawing.Point(505, 160);
+            this.BtnDown.Name = "BtnDown";
+            this.BtnDown.Size = new System.Drawing.Size(41, 41);
+            this.BtnDown.TabIndex = 10;
+            this.BtnDown.Text = "▼";
+            this.BtnDown.UseVisualStyleBackColor = true;
+            this.BtnDown.Click += new System.EventHandler(this.BtnDown_Click);
             // 
             // button3
             // 
@@ -584,8 +586,8 @@ namespace eng_mach
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnDown);
+            this.Controls.Add(this.BtnUp);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
@@ -616,8 +618,8 @@ namespace eng_mach
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnUp;
+        private System.Windows.Forms.Button BtnDown;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
