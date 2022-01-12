@@ -44,6 +44,60 @@ namespace eng_mach
             public static List<Color> avc = new List<Color>();
             public static List<Color> svc = new List<Color>();
         }
+        public static void SetRottors(string r1,string r2,string r3,int off1,int off2, int off3)
+        {
+            SelectedRotors = GetRotorByFormName(r1);
+            SelectedRotors.Next = GetRotorByFormName(r2);
+            SelectedRotors.Next.Next = GetRotorByFormName(r3);
+            SelectedRotors.Offset = off1;
+            SelectedRotors.Next.Offset = off2;
+            SelectedRotors.Next.Next.Offset = off3;
+        }
+        public static void SetReflector(int Ref)
+        {
+            switch (Ref)
+            {
+                case 0:
+                    SelectedReflector = Reflectors.Reflector1;
+                    return;
+                case 1:
+                    SelectedReflector = Reflectors.Reflector2;
+                    return;
+                case 2:
+                    SelectedReflector = Reflectors.Reflector3;
+                    return;
+                default:
+                    SelectedReflector = Reflectors.Reflector1;
+                    return;
+            }
+        }
+        private static Rotor GetRotorByFormName(string r)
+        {
+            if (r == "Rottor 1")
+            {
+                return new Rotor(Rotors.Rotor1);
+            }
+            else if (r == "Rottor 2")
+            {
+                return new Rotor(Rotors.Rotor2);
+            }
+            else if (r == "Rottor 3")
+            {
+                return new Rotor(Rotors.Rotor3);
+            }
+            else if (r == "Rottor 4")
+            {
+                return new Rotor(Rotors.Rotor4);
+            }
+            else if (r == "Rottor 5")
+            {
+                return new Rotor(Rotors.Rotor5);
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 
     public class Rotor
