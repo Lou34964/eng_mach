@@ -19,7 +19,14 @@ namespace eng_mach
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            //default settings
+            settings.SelectedRotors = new Rotor(settings.Rotors.Rotor1);
+            settings.SelectedRotors.Next = new Rotor(settings.Rotors.Rotor2);
+            settings.SelectedRotors.Next.Next = new Rotor(settings.Rotors.Rotor3);
+            settings.SelectedRotors.Offset = 0;
+            settings.SelectedRotors.Next.Offset = 1;
+            settings.SelectedRotors.Next.Next.Offset = 2;
+            settings.SelectedReflector = settings.Reflectors.Reflector1;
         }
 
         private void BtnSettings_Click(object sender, EventArgs e)

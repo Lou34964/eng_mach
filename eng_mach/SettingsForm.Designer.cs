@@ -68,15 +68,15 @@ namespace eng_mach
             this.button28 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.NudRotor1 = new System.Windows.Forms.NumericUpDown();
+            this.NudRotor2 = new System.Windows.Forms.NumericUpDown();
+            this.NudRotor3 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NudRotor1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NudRotor2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NudRotor3)).BeginInit();
             this.SuspendLayout();
             // 
             // LBRotorList
@@ -499,26 +499,26 @@ namespace eng_mach
             this.label4.TabIndex = 38;
             this.label4.Text = "Reflector:";
             // 
-            // numericUpDown1
+            // NudRotor1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(569, 31);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(38, 20);
-            this.numericUpDown1.TabIndex = 39;
+            this.NudRotor1.Location = new System.Drawing.Point(569, 31);
+            this.NudRotor1.Name = "NudRotor1";
+            this.NudRotor1.Size = new System.Drawing.Size(38, 20);
+            this.NudRotor1.TabIndex = 39;
             // 
-            // numericUpDown2
+            // NudRotor2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(569, 57);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(38, 20);
-            this.numericUpDown2.TabIndex = 40;
+            this.NudRotor2.Location = new System.Drawing.Point(569, 57);
+            this.NudRotor2.Name = "NudRotor2";
+            this.NudRotor2.Size = new System.Drawing.Size(38, 20);
+            this.NudRotor2.TabIndex = 40;
             // 
-            // numericUpDown3
+            // NudRotor3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(569, 83);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(38, 20);
-            this.numericUpDown3.TabIndex = 41;
+            this.NudRotor3.Location = new System.Drawing.Point(569, 83);
+            this.NudRotor3.Name = "NudRotor3";
+            this.NudRotor3.Size = new System.Drawing.Size(38, 20);
+            this.NudRotor3.TabIndex = 41;
             // 
             // label5
             // 
@@ -555,9 +555,9 @@ namespace eng_mach
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.NudRotor3);
+            this.Controls.Add(this.NudRotor2);
+            this.Controls.Add(this.NudRotor1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button28);
@@ -599,9 +599,10 @@ namespace eng_mach
             this.Controls.Add(this.LBRotorList);
             this.Name = "SettingsForm";
             this.Text = "SettingsForm";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            this.Load += new System.EventHandler(this.SettingsForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.NudRotor1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NudRotor2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NudRotor3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -648,9 +649,9 @@ namespace eng_mach
         private System.Windows.Forms.Button button28;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown NudRotor1;
+        private System.Windows.Forms.NumericUpDown NudRotor2;
+        private System.Windows.Forms.NumericUpDown NudRotor3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;

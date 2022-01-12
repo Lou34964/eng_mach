@@ -127,5 +127,84 @@ namespace eng_mach
                 }
             }
         }
+
+        private void SettingsForm_Load(object sender, EventArgs e)
+        {
+            loadSettings();
+        }
+
+        private void loadSettings()
+        {
+            //LOAD CURRENT SETTINGS
+
+            //load rotor settings
+            if (settings.SelectedRotors == null)
+            {
+                foreach (object o in LBSelectedRotorList.Items)
+                {
+                    LBRotorList.Items.Add(o);
+                }
+                LBSelectedRotorList.Items.Clear();
+            }
+            else
+            {
+                //load selected rotors in order.
+                Rotor head = new Rotor(settings.SelectedRotors);
+                while (head.Next != null)
+                {
+                    if (head.Name == "rot1")
+                    {
+                        LBSelectedRotorList.Items.Add("Rotor 1");
+                        LBRotorList.Items.Remove("Rotor 1");
+                    }
+                    else if (head.Name == "rot2")
+                    {
+                        LBSelectedRotorList.Items.Add("Rotor 2");
+                        LBRotorList.Items.Remove("Rotor 2");
+                    }
+                    else if (head.Name == "rot3")
+                    {
+                        LBSelectedRotorList.Items.Add("Rotor 3");
+                        LBRotorList.Items.Remove("Rotor 3");
+                    }
+                    else if (head.Name == "rot4")
+                    {
+                        LBSelectedRotorList.Items.Add("Rotor 4");
+                        LBRotorList.Items.Remove("Rotor 4");
+                    }
+                    else if (head.Name == "rot5")
+                    {
+                        LBSelectedRotorList.Items.Add("Rotor 5");
+                        LBRotorList.Items.Remove("Rotor 5");
+                    }
+                    head = head.Next;
+                }
+                //load rotor offsets.
+                NudRotor1.Value = settings.SelectedRotors.Offset;
+                NudRotor2.Value = settings.SelectedRotors.Next.Offset;
+                NudRotor3.Value = settings.SelectedRotors.Next.Next.Offset;
+                //load reflector
+                if(settings.SelectedReflector == null)
+                {
+                    comboBox1.SelectedIndex = -1;
+                }
+                else if (settings.SelectedReflector.Name == "ref1")
+                {
+                    comboBox1.SelectedIndex = 0;
+                }
+                else if (settings.SelectedReflector.Name == "ref2")
+                {
+                    comboBox1.SelectedIndex = 1;
+                }
+                else if (settings.SelectedReflector.Name == "ref3")
+                {
+                    comboBox1.SelectedIndex = 2;
+                }
+                //set reflector pattern
+                comboBox1.Items[0] = $"{comboBox1.Items[0]} --  {settings.Reflectors.Reflector1.Pattern}";
+                comboBox1.Items[1] = $"{comboBox1.Items[1]} --  {settings.Reflectors.Reflector2.Pattern}";
+                comboBox1.Items[2] = $"{comboBox1.Items[2]} --  {settings.Reflectors.Reflector3.Pattern}";
+            }
+        }
     }
 }
