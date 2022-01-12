@@ -68,6 +68,15 @@ namespace eng_mach
             this.button28 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.SuspendLayout();
             // 
             // LBRotorList
@@ -97,7 +106,7 @@ namespace eng_mach
             // BtnMoveRight
             // 
             this.BtnMoveRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMoveRight.Location = new System.Drawing.Point(285, 94);
+            this.BtnMoveRight.Location = new System.Drawing.Point(288, 113);
             this.BtnMoveRight.Name = "BtnMoveRight";
             this.BtnMoveRight.Size = new System.Drawing.Size(41, 41);
             this.BtnMoveRight.TabIndex = 2;
@@ -108,7 +117,7 @@ namespace eng_mach
             // BtnMoveLeft
             // 
             this.BtnMoveLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMoveLeft.Location = new System.Drawing.Point(285, 141);
+            this.BtnMoveLeft.Location = new System.Drawing.Point(288, 160);
             this.BtnMoveLeft.Name = "BtnMoveLeft";
             this.BtnMoveLeft.Size = new System.Drawing.Size(41, 41);
             this.BtnMoveLeft.TabIndex = 3;
@@ -165,7 +174,7 @@ namespace eng_mach
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(521, 94);
+            this.button1.Location = new System.Drawing.Point(505, 113);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(41, 41);
             this.button1.TabIndex = 9;
@@ -175,7 +184,7 @@ namespace eng_mach
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(521, 141);
+            this.button2.Location = new System.Drawing.Point(505, 160);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(41, 41);
             this.button2.TabIndex = 10;
@@ -486,11 +495,65 @@ namespace eng_mach
             this.label4.TabIndex = 38;
             this.label4.Text = "Reflector:";
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(569, 31);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(38, 20);
+            this.numericUpDown1.TabIndex = 39;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(569, 57);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(38, 20);
+            this.numericUpDown2.TabIndex = 40;
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(569, 83);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(38, 20);
+            this.numericUpDown3.TabIndex = 41;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(545, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(102, 13);
+            this.label5.TabIndex = 42;
+            this.label5.Text = "rotor offset selection";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(391, 415);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 43;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(310, 415);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 44;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.numericUpDown3);
+            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button28);
@@ -532,6 +595,9 @@ namespace eng_mach
             this.Controls.Add(this.LBRotorList);
             this.Name = "SettingsForm";
             this.Text = "SettingsForm";
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -578,5 +644,11 @@ namespace eng_mach
         private System.Windows.Forms.Button button28;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
