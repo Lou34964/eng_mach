@@ -205,6 +205,7 @@ namespace eng_mach
             this.button3.TabIndex = 11;
             this.button3.Text = "A";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button4
             // 
@@ -216,6 +217,7 @@ namespace eng_mach
             this.button4.TabIndex = 12;
             this.button4.Text = "B";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button5
             // 
@@ -227,6 +229,7 @@ namespace eng_mach
             this.button5.TabIndex = 13;
             this.button5.Text = "C";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button6
             // 
@@ -238,6 +241,7 @@ namespace eng_mach
             this.button6.TabIndex = 14;
             this.button6.Text = "D";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button7
             // 
@@ -249,6 +253,7 @@ namespace eng_mach
             this.button7.TabIndex = 15;
             this.button7.Text = "E";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button8
             // 
@@ -260,6 +265,7 @@ namespace eng_mach
             this.button8.TabIndex = 16;
             this.button8.Text = "F";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button9
             // 
@@ -271,6 +277,7 @@ namespace eng_mach
             this.button9.TabIndex = 17;
             this.button9.Text = "G";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button10
             // 
@@ -282,6 +289,7 @@ namespace eng_mach
             this.button10.TabIndex = 18;
             this.button10.Text = "H";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button11
             // 
@@ -293,6 +301,7 @@ namespace eng_mach
             this.button11.TabIndex = 19;
             this.button11.Text = "I";
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button12
             // 
@@ -304,6 +313,7 @@ namespace eng_mach
             this.button12.TabIndex = 20;
             this.button12.Text = "J";
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button13
             // 
@@ -315,6 +325,7 @@ namespace eng_mach
             this.button13.TabIndex = 21;
             this.button13.Text = "K";
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button14
             // 
@@ -326,6 +337,7 @@ namespace eng_mach
             this.button14.TabIndex = 22;
             this.button14.Text = "L";
             this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button15
             // 
@@ -337,6 +349,7 @@ namespace eng_mach
             this.button15.TabIndex = 23;
             this.button15.Text = "M";
             this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button16
             // 
@@ -348,6 +361,7 @@ namespace eng_mach
             this.button16.TabIndex = 24;
             this.button16.Text = "N";
             this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button17
             // 
@@ -359,6 +373,7 @@ namespace eng_mach
             this.button17.TabIndex = 25;
             this.button17.Text = "O";
             this.button17.UseVisualStyleBackColor = false;
+            this.button17.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button18
             // 
@@ -370,6 +385,7 @@ namespace eng_mach
             this.button18.TabIndex = 26;
             this.button18.Text = "P";
             this.button18.UseVisualStyleBackColor = false;
+            this.button18.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button19
             // 
@@ -381,6 +397,7 @@ namespace eng_mach
             this.button19.TabIndex = 27;
             this.button19.Text = "Q";
             this.button19.UseVisualStyleBackColor = false;
+            this.button19.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button20
             // 
@@ -392,6 +409,7 @@ namespace eng_mach
             this.button20.TabIndex = 28;
             this.button20.Text = "R";
             this.button20.UseVisualStyleBackColor = false;
+            this.button20.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button21
             // 
@@ -403,6 +421,7 @@ namespace eng_mach
             this.button21.TabIndex = 29;
             this.button21.Text = "S";
             this.button21.UseVisualStyleBackColor = false;
+            this.button21.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button22
             // 
@@ -414,6 +433,7 @@ namespace eng_mach
             this.button22.TabIndex = 30;
             this.button22.Text = "T";
             this.button22.UseVisualStyleBackColor = false;
+            this.button22.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button23
             // 
@@ -425,6 +445,7 @@ namespace eng_mach
             this.button23.TabIndex = 31;
             this.button23.Text = "U";
             this.button23.UseVisualStyleBackColor = false;
+            this.button23.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button24
             // 
@@ -436,6 +457,7 @@ namespace eng_mach
             this.button24.TabIndex = 32;
             this.button24.Text = "V";
             this.button24.UseVisualStyleBackColor = false;
+            this.button24.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button25
             // 
@@ -447,6 +469,7 @@ namespace eng_mach
             this.button25.TabIndex = 33;
             this.button25.Text = "W";
             this.button25.UseVisualStyleBackColor = false;
+            this.button25.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button26
             // 
@@ -458,6 +481,7 @@ namespace eng_mach
             this.button26.TabIndex = 34;
             this.button26.Text = "X";
             this.button26.UseVisualStyleBackColor = false;
+            this.button26.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button27
             // 
@@ -469,6 +493,7 @@ namespace eng_mach
             this.button27.TabIndex = 35;
             this.button27.Text = "Y";
             this.button27.UseVisualStyleBackColor = false;
+            this.button27.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // button28
             // 
@@ -480,6 +505,7 @@ namespace eng_mach
             this.button28.TabIndex = 36;
             this.button28.Text = "Z";
             this.button28.UseVisualStyleBackColor = false;
+            this.button28.Click += new System.EventHandler(this.PlugboardSelect);
             // 
             // label3
             // 

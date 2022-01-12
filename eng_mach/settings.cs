@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,7 +39,11 @@ namespace eng_mach
             public static Reflector Reflector2 = new Reflector(ReflectorPattern_2, "ref2");
             public static Reflector Reflector3 = new Reflector(ReflectorPattern_3, "ref3");
         }
-
+        public static class PlugBoardColors
+        {
+            public static List<Color> avc = new List<Color>();
+            public static List<Color> svc = new List<Color>();
+        }
     }
 
     public class Rotor
@@ -151,16 +156,16 @@ namespace eng_mach
     {
         int[] Default = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 };
         int[] Plugs = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 };
-        void Reset()
+        public void Reset()
         {
             Plugs = Default;
         }
-        void SetPlug(int Plug1, int Plug2)
+        public void SetPlug(int Plug1, int Plug2)
         {
             Plugs[Plug1] = Plug2;
             Plugs[Plug2] = Plug1;
         }
-        int GetPlugConvertion(int plug)
+        public int GetPlugConvertion(int plug)
         {
             return this.Plugs[plug];
         }

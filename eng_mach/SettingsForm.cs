@@ -16,7 +16,7 @@ namespace eng_mach
         {
             InitializeComponent();
         }
-
+        int selectMode = 0;
         private void BtnMoveRight_Click(object sender, EventArgs e)
         {
             if(LBRotorList.SelectedIndex > -1)
@@ -204,6 +204,47 @@ namespace eng_mach
                 comboBox1.Items[0] = $"{comboBox1.Items[0]} --  {settings.Reflectors.Reflector1.Pattern}";
                 comboBox1.Items[1] = $"{comboBox1.Items[1]} --  {settings.Reflectors.Reflector2.Pattern}";
                 comboBox1.Items[2] = $"{comboBox1.Items[2]} --  {settings.Reflectors.Reflector3.Pattern}";
+            }
+        }
+        private Color selcolor;
+        private string first, second;
+        private void PlugboardSelect(object sender, EventArgs e)
+        {
+            if ((sender as Button).BackColor == Color.Transparent)
+            {
+                Random r = new Random();
+                if (selectMode == 0)
+                {
+                    first = (sender as Button).Text;
+                    selectMode = 1;
+                    int rc = r.Next(0, settings.PlugBoardColors.avc.Count);
+                    selcolor = settings.PlugBoardColors.avc[rc];
+                    settings.PlugBoardColors.svc.Add(selcolor);
+                    settings.PlugBoardColors.avc.Remove(selcolor);
+                    (sender as Button).BackColor = selcolor;
+                }
+                else
+                {
+                    selectMode = 0;
+                    second = (sender as Button).Text;
+                    (sender as Button).BackColor = selcolor;
+                    settings.PlugBoard.SetPlug(settings.int_to_string.IndexOf(first),
+                        settings.int_to_string.IndexOf(second));
+                }
+            }
+            else
+            {
+                first = (sender as Button).Text;
+                Color c = (sender as Button).BackColor;
+                (sender as Button).BackColor = Color.Transparent;
+                Button B = Controls.OfType<Button>().Where(b => b.BackColor == c).First();
+                second = B.Text;
+                B.BackColor = Color.Transparent;
+                settings.PlugBoard.SetPlug(settings.int_to_string.IndexOf(first),
+                        settings.int_to_string.IndexOf(first));
+                settings.PlugBoard.SetPlug(settings.int_to_string.IndexOf(second),
+                        settings.int_to_string.IndexOf(second));
+
             }
         }
     }

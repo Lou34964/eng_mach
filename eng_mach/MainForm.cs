@@ -27,6 +27,19 @@ namespace eng_mach
             settings.SelectedRotors.Next.Offset = 1;
             settings.SelectedRotors.Next.Next.Offset = 2;
             settings.SelectedReflector = settings.Reflectors.Reflector1;
+            settings.PlugBoardColors.avc.Add(Color.White);
+            settings.PlugBoardColors.avc.Add(Color.Red);
+            settings.PlugBoardColors.avc.Add(Color.Blue);
+            settings.PlugBoardColors.avc.Add(Color.Green);
+            settings.PlugBoardColors.avc.Add(Color.Aqua);
+            settings.PlugBoardColors.avc.Add(Color.Gold);
+            settings.PlugBoardColors.avc.Add(Color.Yellow);
+            settings.PlugBoardColors.avc.Add(Color.Brown);
+            settings.PlugBoardColors.avc.Add(Color.Orange);
+            settings.PlugBoardColors.avc.Add(Color.Pink);
+            settings.PlugBoardColors.avc.Add(Color.DarkCyan);
+            settings.PlugBoardColors.avc.Add(Color.Gray);
+            settings.PlugBoardColors.avc.Add(Color.Lime);
         }
 
         private void BtnSettings_Click(object sender, EventArgs e)
