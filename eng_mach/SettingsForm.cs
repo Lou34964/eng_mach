@@ -216,6 +216,24 @@ namespace eng_mach
         }
         private Color selcolor;
         private string first, second;
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            settings.SelectedRotors = null;
+            settings.SetRottors(LBSelectedRotorList.Items[0].ToString(),
+                LBSelectedRotorList.Items[1].ToString(),
+                LBSelectedRotorList.Items[2].ToString(),
+                (int)NudRotor1.Value,
+                (int)NudRotor2.Value,
+                (int)NudRotor3.Value);
+            settings.SetReflector(comboBox1.SelectedIndex);
+        }
+
         private void PlugboardSelect(object sender, EventArgs e)
         {
             if ((sender as Button).BackColor == Color.Transparent)
