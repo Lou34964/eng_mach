@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,19 +27,23 @@ namespace eng_mach
 
         public static class Rotors
         {
-            public static Rotor Rotor1 = new Rotor(RotorPattern_1, 0, 8);
-            public static Rotor Rotor2 = new Rotor(RotorPattern_2, 0, 12);
-            public static Rotor Rotor3 = new Rotor(RotorPattern_3, 0, 2);
-            public static Rotor Rotor4 = new Rotor(RotorPattern_4, 0, 19);
-            public static Rotor Rotor5 = new Rotor(RotorPattern_5, 0, 23);
+            public static Rotor Rotor1 = new Rotor(RotorPattern_1, 0, 8, "rot1");
+            public static Rotor Rotor2 = new Rotor(RotorPattern_2, 0, 12, "rot2");
+            public static Rotor Rotor3 = new Rotor(RotorPattern_3, 0, 2, "rot3");
+            public static Rotor Rotor4 = new Rotor(RotorPattern_4, 0, 19,"rot4");
+            public static Rotor Rotor5 = new Rotor(RotorPattern_5, 0, 23,"rot5");
         }
         public static class Reflectors
         {
-            public static Reflector Reflector1 = new Reflector(ReflectorPattern_1);
-            public static Reflector Reflector2 = new Reflector(ReflectorPattern_2);
-            public static Reflector Reflector3 = new Reflector(ReflectorPattern_3);
+            public static Reflector Reflector1 = new Reflector(ReflectorPattern_1, "ref1");
+            public static Reflector Reflector2 = new Reflector(ReflectorPattern_2, "ref2");
+            public static Reflector Reflector3 = new Reflector(ReflectorPattern_3, "ref3");
         }
-
+        public static class PlugBoardColors
+        {
+            public static List<Color> avc = new List<Color>();
+            public static List<Color> svc = new List<Color>();
+        }
     }
 
     public class Rotor
@@ -47,14 +52,16 @@ namespace eng_mach
         {
             this.Convertion = r.Convertion;
             this.Pattern = r.Pattern;
+            this.Name = r.Name;
         }
-        public Rotor(string pattern, int offset, int notch)
+        public Rotor(string pattern, int offset, int notch, string name)
         {
             //use this to set static rotor
-            //set pattern, offset and notch
+            //set pattern, offset, notch and name
             this.Pattern = pattern;
             this.Offset = offset;
             this.Notch = notch;
+            this.Name = name;
             //using the pattern set the conversion setting
             for (int i = 0; i < pattern.Length; i++)
             {
@@ -67,6 +74,7 @@ namespace eng_mach
             this.Convertion = r.Convertion;
             this.Pattern = r.Pattern;
             this.Next = next;
+            this.Name = r.Name;
         }
         public Rotor(Rotor r, Rotor next, Rotor prev)
         {
@@ -75,7 +83,9 @@ namespace eng_mach
             this.Pattern = r.Pattern;
             this.Next = next;
             this.Prev = prev;
+            this.Name = r.Name;
         }
+        public string Name = null;
         public int[] Convertion = new int[26];
         public string Pattern { get; private set; }
         public Rotor Next = null;
@@ -119,10 +129,11 @@ namespace eng_mach
 
     public class Reflector
     {
-        public Reflector(string pattern)
+        public Reflector(string pattern, string name)
         {
-            //set pattern
+            //set pattern and name
             this.Pattern = pattern;
+            this.Name = name;
             //set converion based on pattern.
             for (int i = 0; i < pattern.Length; i++)
             {
@@ -131,27 +142,33 @@ namespace eng_mach
         }
         public Reflector(Reflector r)
         {
-            //set pattern and convertion
+            //set pattern and convertion and name
             this.Pattern = r.Pattern;
             this.Convertion = r.Convertion;
+            this.Name = r.Name;
         }
         int[] Convertion = new int[26];
-
+        public string Name { get; private set; }
         public string Pattern { get; private set; }
     }
 
     public class Plugboard
     {
         int[] Default = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 };
-        int[] Plugs = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 };
-        void Reset()
+        public int[] Plugs { get; private set; } = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 };
+        public Color[] Colors = new Color[26];
+        public void Reset()
         {
             Plugs = Default;
         }
-        void SetPlug(int Plug1, int Plug2)
+        public void SetPlug(int Plug1, int Plug2)
         {
             Plugs[Plug1] = Plug2;
             Plugs[Plug2] = Plug1;
+        }
+        public int GetPlugConvertion(int plug)
+        {
+            return this.Plugs[plug];
         }
     }
 

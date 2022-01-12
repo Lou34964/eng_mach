@@ -67,8 +67,9 @@ namespace eng_mach
             this.BtnSettings.Name = "BtnSettings";
             this.BtnSettings.Size = new System.Drawing.Size(75, 23);
             this.BtnSettings.TabIndex = 3;
-            this.BtnSettings.Text = "Settings";
+            this.BtnSettings.Text = "Settings☼";
             this.BtnSettings.UseVisualStyleBackColor = true;
+            this.BtnSettings.Click += new System.EventHandler(this.BtnSettings_Click);
             // 
             // MainForm
             // 
