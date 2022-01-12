@@ -79,6 +79,7 @@ namespace eng_mach
             this.LBRotorList.Location = new System.Drawing.Point(136, 31);
             this.LBRotorList.Name = "LBRotorList";
             this.LBRotorList.Size = new System.Drawing.Size(120, 277);
+            this.LBRotorList.Sorted = true;
             this.LBRotorList.TabIndex = 0;
             // 
             // LBSelectedRotorList
