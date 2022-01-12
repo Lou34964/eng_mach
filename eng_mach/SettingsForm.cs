@@ -206,16 +206,30 @@ namespace eng_mach
                 comboBox1.Items[2] = $"{comboBox1.Items[2]} --  {settings.Reflectors.Reflector3.Pattern}";
 
                 //load Plugboard
-                Button[] pbplugs = Controls.OfType<Button>().Where(b => b.Tag == "plugs").ToArray();
-                Array.Reverse(pbplugs);
-                for (int i =0; i< pbplugs.Length; i++)
+                Dictionary<int, int> keyValuePairs = new Dictionary<int, int>();
+                foreach (int i in settings.PlugBoard.Plugs)
                 {
-                    pbplugs[i].BackColor = settings.PlugBoard.Colors[i];
+                    keyValuePairs.Add(Array.IndexOf(settings.PlugBoard.Plugs, i), i);
+                }
+                foreach (KeyValuePair<int, int> k in keyValuePairs)
+                {
+                    if (!Plugs.ContainsKey(settings.int_to_string[k.Key].ToString()) && !Plugs.ContainsValue(settings.int_to_string[k.Value].ToString()))
+                    {
+                        Plugs.Add(settings.int_to_string[k.Key].ToString(), settings.int_to_string[k.Value].ToString());
+                    }
+                }
+                int _i = 0;
+                foreach(KeyValuePair<string,string> k in Plugs)
+                {
+                    IEnumerable<Button> btns = Controls.OfType<Button>().Where(b => b.Text == k.Key || b.Text == k.Value);
+                    foreach(Button b in btns)
+                    {
+                        b.BackColor = settings.PlugBoard.Colors[_i];
+                    }
+                    _i++;
                 }
             }
         }
-        private Color selcolor;
-        private string first, second;
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -232,8 +246,17 @@ namespace eng_mach
                 (int)NudRotor2.Value,
                 (int)NudRotor3.Value);
             settings.SetReflector(comboBox1.SelectedIndex);
+            settings.PlugBoard.Reset();
+            foreach(KeyValuePair<string, string> plug in Plugs)
+            {
+                settings.PlugBoard.SetPlug(settings.int_to_string.IndexOf(plug.Key), settings.int_to_string.IndexOf(plug.Value));
+            }
         }
 
+        private Color selcolor;
+        private string first, second;
+        Dictionary<string, string> Plugs = new Dictionary<string, string>();
+        Color[] cols = new Color[26];
         private void PlugboardSelect(object sender, EventArgs e)
         {
             if ((sender as Button).BackColor == Color.Transparent)
@@ -254,10 +277,10 @@ namespace eng_mach
                     selectMode = 0;
                     second = (sender as Button).Text;
                     (sender as Button).BackColor = selcolor;
-                    settings.PlugBoard.SetPlug(settings.int_to_string.IndexOf(first),
-                        settings.int_to_string.IndexOf(second));
-                    settings.PlugBoard.Colors[settings.int_to_string.IndexOf(first)] = selcolor;
-                    settings.PlugBoard.Colors[settings.int_to_string.IndexOf(second)] = selcolor;
+                    Plugs[first] = second;
+                    Plugs[second] = first;
+                    cols[settings.int_to_string.IndexOf(first)] = selcolor;
+                    cols[settings.int_to_string.IndexOf(second)] = selcolor;
                 }
             }
             else
@@ -268,13 +291,18 @@ namespace eng_mach
                 Button B = Controls.OfType<Button>().Where(b => b.BackColor == c).First();
                 second = B.Text;
                 B.BackColor = Color.Transparent;
-                settings.PlugBoard.SetPlug(settings.int_to_string.IndexOf(first),
-                        settings.int_to_string.IndexOf(first));
-                settings.PlugBoard.SetPlug(settings.int_to_string.IndexOf(second),
-                        settings.int_to_string.IndexOf(second));
-                settings.PlugBoard.Colors[settings.int_to_string.IndexOf(first)] = Color.Transparent;
-                settings.PlugBoard.Colors[settings.int_to_string.IndexOf(second)] = Color.Transparent;
-
+                cols[settings.int_to_string.IndexOf(first)] = Color.Transparent;
+                cols[settings.int_to_string.IndexOf(second)] = Color.Transparent;
+                try
+                {
+                    Plugs.Remove(first);
+                }
+                catch
+                {
+                    Plugs.Remove(second);
+                }
+                first = "";
+                second = "";
             }
         }
     }

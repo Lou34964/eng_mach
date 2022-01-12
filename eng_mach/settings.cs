@@ -73,23 +73,23 @@ namespace eng_mach
         }
         private static Rotor GetRotorByFormName(string r)
         {
-            if (r == "Rottor 1")
+            if (r == "Rotor 1")
             {
                 return new Rotor(Rotors.Rotor1);
             }
-            else if (r == "Rottor 2")
+            else if (r == "Rotor 2")
             {
                 return new Rotor(Rotors.Rotor2);
             }
-            else if (r == "Rottor 3")
+            else if (r == "Rotor 3")
             {
                 return new Rotor(Rotors.Rotor3);
             }
-            else if (r == "Rottor 4")
+            else if (r == "Rotor 4")
             {
                 return new Rotor(Rotors.Rotor4);
             }
-            else if (r == "Rottor 5")
+            else if (r == "Rotor 5")
             {
                 return new Rotor(Rotors.Rotor5);
             }
