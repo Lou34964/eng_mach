@@ -40,6 +40,10 @@ namespace eng_mach
             settings.PlugBoardColors.avc.Add(Color.DarkCyan);
             settings.PlugBoardColors.avc.Add(Color.Gray);
             settings.PlugBoardColors.avc.Add(Color.Lime);
+            for(int i = 0; i < settings.PlugBoard.Colors.Length; i++)
+            {
+                settings.PlugBoard.Colors[i] = Color.Transparent;
+            }
         }
 
         private void BtnSettings_Click(object sender, EventArgs e)

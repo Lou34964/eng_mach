@@ -204,6 +204,14 @@ namespace eng_mach
                 comboBox1.Items[0] = $"{comboBox1.Items[0]} --  {settings.Reflectors.Reflector1.Pattern}";
                 comboBox1.Items[1] = $"{comboBox1.Items[1]} --  {settings.Reflectors.Reflector2.Pattern}";
                 comboBox1.Items[2] = $"{comboBox1.Items[2]} --  {settings.Reflectors.Reflector3.Pattern}";
+
+                //load Plugboard
+                Button[] pbplugs = Controls.OfType<Button>().Where(b => b.Tag == "plugs").ToArray();
+                Array.Reverse(pbplugs);
+                for (int i =0; i< pbplugs.Length; i++)
+                {
+                    pbplugs[i].BackColor = settings.PlugBoard.Colors[i];
+                }
             }
         }
         private Color selcolor;
@@ -230,6 +238,8 @@ namespace eng_mach
                     (sender as Button).BackColor = selcolor;
                     settings.PlugBoard.SetPlug(settings.int_to_string.IndexOf(first),
                         settings.int_to_string.IndexOf(second));
+                    settings.PlugBoard.Colors[settings.int_to_string.IndexOf(first)] = selcolor;
+                    settings.PlugBoard.Colors[settings.int_to_string.IndexOf(second)] = selcolor;
                 }
             }
             else
@@ -244,6 +254,8 @@ namespace eng_mach
                         settings.int_to_string.IndexOf(first));
                 settings.PlugBoard.SetPlug(settings.int_to_string.IndexOf(second),
                         settings.int_to_string.IndexOf(second));
+                settings.PlugBoard.Colors[settings.int_to_string.IndexOf(first)] = Color.Transparent;
+                settings.PlugBoard.Colors[settings.int_to_string.IndexOf(second)] = Color.Transparent;
 
             }
         }
