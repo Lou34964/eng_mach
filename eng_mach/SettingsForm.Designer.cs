@@ -90,6 +90,7 @@ namespace eng_mach
             this.LBRotorList.Size = new System.Drawing.Size(120, 277);
             this.LBRotorList.Sorted = true;
             this.LBRotorList.TabIndex = 0;
+            this.LBRotorList.SelectedIndexChanged += new System.EventHandler(this.LBRotorList_SelectedIndexChanged);
             // 
             // LBSelectedRotorList
             // 
@@ -102,6 +103,7 @@ namespace eng_mach
             this.LBSelectedRotorList.Name = "LBSelectedRotorList";
             this.LBSelectedRotorList.Size = new System.Drawing.Size(120, 277);
             this.LBSelectedRotorList.TabIndex = 1;
+            this.LBSelectedRotorList.SelectedIndexChanged += new System.EventHandler(this.LBSelectedRotorList_SelectedIndexChanged);
             // 
             // BtnMoveRight
             // 

@@ -45,5 +45,54 @@ namespace eng_mach
                 LBSelectedRotorList.Items.RemoveAt(LBSelectedRotorList.SelectedIndex);
             }
         }
+
+        private void LBRotorList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if((sender as ListBox).SelectedIndex > -1)
+            {
+                LBSelectedRotorList.SelectedIndex = -1;
+                SetPatternTextBox((sender as ListBox).SelectedItem.ToString());
+            }
+        }
+
+        private void LBSelectedRotorList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((sender as ListBox).SelectedIndex > -1)
+            {
+                LBRotorList.SelectedIndex = -1;
+                SetPatternTextBox((sender as ListBox).SelectedItem.ToString());
+            }
+        }
+
+
+
+        private void SetPatternTextBox(string rotor)
+        {
+            if(rotor == "Rotor 1")
+            {
+                textBoxRotorPattern.Text = settings.Rotors.Rotor1.Pattern;
+            }
+            else if (rotor == "Rotor 2")
+            {
+                textBoxRotorPattern.Text = settings.Rotors.Rotor2.Pattern;
+            }
+            else if (rotor == "Rotor 3")
+            {
+                textBoxRotorPattern.Text = settings.Rotors.Rotor3.Pattern;
+            }
+            else if (rotor == "Rotor 4")
+            {
+                textBoxRotorPattern.Text = settings.Rotors.Rotor4.Pattern;
+            }
+            else if (rotor == "Rotor 5")
+            {
+                textBoxRotorPattern.Text = settings.Rotors.Rotor5.Pattern;
+            }
+            else
+            {
+                throw new Exception("Error Setting Rotor Pattern");
+            }
+        }
+
     }
 }
