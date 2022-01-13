@@ -218,15 +218,12 @@ namespace eng_mach
                         Plugs.Add(settings.int_to_string[k.Key].ToString(), settings.int_to_string[k.Value].ToString());
                     }
                 }
-                int _i = 0;
-                foreach(KeyValuePair<string,string> k in Plugs)
+                Color[] cols = settings.PlugBoard.Colors;
+                Button[] btns = (from Button b in Controls.OfType<Button>() where b.Tag == "plugs" select b).ToArray();
+                Array.Reverse(btns);
+                for(int i = 0; i < btns.Length; i++)
                 {
-                    IEnumerable<Button> btns = Controls.OfType<Button>().Where(b => b.Text == k.Key || b.Text == k.Value);
-                    foreach(Button b in btns)
-                    {
-                        b.BackColor = settings.PlugBoard.Colors[_i];
-                    }
-                    _i++;
+                    btns[i].BackColor = cols[i];
                 }
             }
         }
@@ -251,6 +248,10 @@ namespace eng_mach
             {
                 settings.PlugBoard.SetPlug(settings.int_to_string.IndexOf(plug.Key), settings.int_to_string.IndexOf(plug.Value));
             }
+            IEnumerable<Color> cols = from Button b in Controls.OfType<Button>() where b.Tag == "plugs" select b.BackColor;
+            Color[] cols_ = cols.ToArray();
+            Array.Reverse(cols_);
+            settings.PlugBoard.Colors = cols_;
         }
 
         private Color selcolor;
@@ -293,14 +294,8 @@ namespace eng_mach
                 B.BackColor = Color.Transparent;
                 cols[settings.int_to_string.IndexOf(first)] = Color.Transparent;
                 cols[settings.int_to_string.IndexOf(second)] = Color.Transparent;
-                try
-                {
-                    Plugs.Remove(first);
-                }
-                catch
-                {
-                    Plugs.Remove(second);
-                }
+                Plugs[first] = first;
+                Plugs[second] = second;
                 first = "";
                 second = "";
             }
