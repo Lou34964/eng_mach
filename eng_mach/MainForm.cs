@@ -74,8 +74,9 @@ namespace eng_mach
                 int R1Res2 = settings.SelectedRotors.GetConvertion(R2Res2);
                 int plugb2Result = settings.PlugBoard.Plugs[R1Res2];
                 textBoxOutPut.Text += settings.int_to_string[plugb2Result];
+                MessageBox.Show($"{R1Res}+{R2Res}+{R3Res}+{refRes}+{R3Res2}+{R2Res2}+{R1Res2}");
+                settings.SelectedRotors.Rotate();
             }
-            settings.SelectedRotors.Rotate();
         }
     }
 }
