@@ -146,7 +146,7 @@ namespace eng_mach
         public Rotor Prev = null;
         public int Offset = 0;
         public int Notch = 0;
-        void Rotate()
+        public void Rotate()
         {
             //simulate rotating the rotor
 
@@ -168,7 +168,7 @@ namespace eng_mach
             //"else" rotate forward one letter
             Offset++;
         }
-        int GetConvertion(int In)
+        public int GetConvertion(int In)
         {
             //add offset to In
             int _In = In + Offset;
@@ -204,6 +204,10 @@ namespace eng_mach
         int[] Convertion = new int[26];
         public string Name { get; private set; }
         public string Pattern { get; private set; }
+        public int GetConvertion(int In)
+        {
+            return Convertion[In];
+        }
     }
 
     public class Plugboard

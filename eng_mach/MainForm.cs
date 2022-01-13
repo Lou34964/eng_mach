@@ -51,5 +51,31 @@ namespace eng_mach
             SettingsForm sf = new SettingsForm();
             sf.Show();
         }
+        Dictionary<char, string> cToS = new Dictionary<char, string>()
+        {
+            { 'A', "A"},{ 'B', "B"},{ 'C', "C"},{ 'D', "D"},{ 'E', "E"},{ 'F', "F"},{ 'G', "G"},
+            { 'H', "H"},{ 'I', "I"},{ 'J', "J"},{ 'K', "K"},{ 'L', "L"},{ 'M', "M"},{ 'N', "N"},
+            { 'O', "O"},{ 'P', "P"},{ 'Q', "Q"},{ 'R', "R"},{ 'S', "S"},{ 'T', "T"},{ 'U', "U"},
+            { 'V', "V"},{ 'W', "W"},{ 'X', "X"},{ 'Y', "Y"},{ 'Z', "Z"},
+        };
+        private void BtnEncryptDecrypt_Click(object sender, EventArgs e)
+        {
+            textBoxOutPut.Text = string.Empty;
+            string imp = textBoxInput.Text.ToUpper();
+            foreach(char c in imp.ToCharArray())
+            {
+                int plugb1Result = settings.PlugBoard.Plugs[settings.int_to_string.IndexOf(cToS[c])];
+                int R1Res = settings.SelectedRotors.GetConvertion(plugb1Result);
+                int R2Res = settings.SelectedRotors.Next.GetConvertion(R1Res);
+                int R3Res = settings.SelectedRotors.Next.Next.GetConvertion(R2Res);
+                int refRes = settings.SelectedReflector.GetConvertion(R3Res);
+                int R3Res2 = settings.SelectedRotors.Next.Next.GetConvertion(refRes);
+                int R2Res2 = settings.SelectedRotors.Next.GetConvertion(R3Res2);
+                int R1Res2 = settings.SelectedRotors.GetConvertion(R2Res2);
+                int plugb2Result = settings.PlugBoard.Plugs[R1Res2];
+                textBoxOutPut.Text += settings.int_to_string[plugb2Result];
+            }
+            settings.SelectedRotors.Rotate();
+        }
     }
 }

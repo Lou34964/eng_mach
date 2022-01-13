@@ -60,6 +60,7 @@ namespace eng_mach
             this.BtnEncryptDecrypt.TabIndex = 2;
             this.BtnEncryptDecrypt.Text = "Encrypt/Decrypt";
             this.BtnEncryptDecrypt.UseVisualStyleBackColor = true;
+            this.BtnEncryptDecrypt.Click += new System.EventHandler(this.BtnEncryptDecrypt_Click);
             // 
             // BtnSettings
             // 
