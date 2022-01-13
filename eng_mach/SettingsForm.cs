@@ -252,6 +252,7 @@ namespace eng_mach
             Color[] cols_ = cols.ToArray();
             Array.Reverse(cols_);
             settings.PlugBoard.Colors = cols_;
+            Dispose();
         }
 
         private Color selcolor;
@@ -299,6 +300,7 @@ namespace eng_mach
                 first = "";
                 second = "";
             }
+            
         }
     }
 }
